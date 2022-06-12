@@ -18,7 +18,7 @@ export const GlobalNavigation = () => {
           <TabList>
             {
               TAB_CLASS_NAMES.map(className => (
-                <Tab>
+                <Tab key={className}>
                   <i className={className}></i>
                   <div className="gnav--tabs--selected" />
                 </Tab>

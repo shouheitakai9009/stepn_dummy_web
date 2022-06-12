@@ -1,7 +1,6 @@
 .sneakerFilters {
   margin-right: 20px;
   min-width: 440px;
-  height: 600px;
   background: #f0f0f0;
   border-radius: 30px;
   padding: 10px 40px;
@@ -20,5 +19,51 @@
       font-weight: bold;
       cursor: pointer;
     }
+  }
+  &--searchField {
+    margin-top: 20px;
+    padding-bottom: 10px;
+    &--in {
+      padding-bottom: 15px;
+    }
+    &--title {
+      color: #707070;
+      @extend .fontfamily--orbitron;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    &--radios {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      &--item {
+        margin: 6px;
+      }
+    }
+    & .rc-slider {
+      & .rc-slider-track {
+        background: $color-primary !important;
+      }
+      & .rc-slider-handle {
+        background: orange;
+        border-color: orange;
+        outline: 0;
+        &-dragging {
+          box-shadow: 0 0 0 5px orange !important;
+          border-color: orange !important;
+        }
+      }
+    }
+    & .rc-slider-mark {
+      & > .rc-slider-mark-text {
+        @extend .fontfamily--orbitron;
+        font-weight: bold;
+      }
+    }
+  }
+  &--buttonArea {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
   }
 }

@@ -12,4 +12,14 @@
   &--primary {
     background: $color-primary;
   }
+  &--outline {
+    box-shadow: none;
+    border: 2px dashed #909090;
+    color: #909090;
+  }
+  &--large {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 36px;
+  }
 }
