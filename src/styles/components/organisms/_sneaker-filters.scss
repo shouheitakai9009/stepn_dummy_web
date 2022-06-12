@@ -1,0 +1,24 @@
+.sneakerFilters {
+  margin-right: 20px;
+  min-width: 440px;
+  height: 600px;
+  background: #f0f0f0;
+  border-radius: 30px;
+  padding: 10px 40px;
+  &--header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    &--title {
+      @extend .fontfamily--orbitron;
+      font-size: 24px;
+    }
+    &--clear {
+      @extend .fontfamily--orbitron;
+      color: orange;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+}

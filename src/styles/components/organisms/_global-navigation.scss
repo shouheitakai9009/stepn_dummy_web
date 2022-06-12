@@ -1,0 +1,52 @@
+.gnav {
+  display: flex;
+  justify-content: center;
+  &--tabs {
+    position: fixed;
+    left: 0;
+    bottom: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 10000;
+    & > .react-tabs__tab-list {
+      width: 600px;
+      background: $color-background-normal;
+      height: 80px;
+      border-radius: 100px;
+      display: flex;
+      box-shadow: 0 3px 80px rgba(0,0,0,.5);
+      border: 1px solid rgba(0,0,0,.02);
+      & > .react-tabs__tab {
+        width: 150px;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        &--selected {
+          outline: 0;
+          & > .gnav--tabs--selected {
+            z-index: 1000;
+            position: absolute;
+            top: 25px;
+            left: 30px;
+            width: 90px;
+            height: 30px;
+            background: $color-primary;
+            border-radius: 50px;
+            transition: ease-in-out background-color .3s;
+          }
+          & > .fas {
+            transform: rotateZ(15deg);
+          }
+        }
+        & > .fas {
+          transition: ease-in-out all .3s;
+          z-index: 1001;
+          font-size: 40px;
+        }
+      }
+    }
+  }
+}

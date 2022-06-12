@@ -1,0 +1,15 @@
+.button {
+  padding: 6px 24px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #404040;
+  box-shadow: 3px 2px 0 #606060;
+  @extend .fontfamily--orbitron;
+  font-size: 15px;
+  cursor: pointer;
+  &--primary {
+    background: $color-primary;
+  }
+}
