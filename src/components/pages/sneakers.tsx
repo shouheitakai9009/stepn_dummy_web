@@ -5,6 +5,11 @@ import { getContract, getAccounts } from '../../services/get'
 
 export const Sneakers = () => {
 
+  React.useEffect(() => {
+    console.log("マウント")
+    return () => console.log("アンマウント")
+  }, [])
+
   return (
     <article className="p-sneakers">
       <SneakerFilters />

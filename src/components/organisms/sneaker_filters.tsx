@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import Slider from 'rc-slider';
-import 'rc-slider/assets/index.css';
+import 'rc-slider/assets/index.css'
 import { ShoeType } from '../../enums/shoe_type'
 import { Rality } from '../../enums/rality'
 
@@ -47,6 +47,7 @@ export const SneakerFilters = () => {
           {
             Object.keys(ShoeType).map((key, index) => (
               <button
+                key={key}
                 className={`button ${selectedClass === index ? "button--primary" : "button--outline"} sneakerFilters--searchField--radios--item`}
                 onClick={() => setSelectedClass(index)}
               >
@@ -62,6 +63,7 @@ export const SneakerFilters = () => {
           {
             Object.keys(Rality).map((key, index) => (
               <button
+                key={key}
                 className={`button ${selectedQuality === index ? "button--primary" : "button--outline"} sneakerFilters--searchField--radios--item`}
                 onClick={() => setSelectedQuality(index)}
               >

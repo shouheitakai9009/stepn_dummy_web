@@ -35,7 +35,9 @@ export const GlobalNavigation = () => {
         <TabPanel>
           <h2>Comming soon</h2>
         </TabPanel>
-        <TabPanel><Sneakers /></TabPanel>
+        <TabPanel>
+          <Sneakers />
+        </TabPanel>
       </Tabs>
     </nav>
   )

@@ -2,11 +2,11 @@
 import Web3 from 'web3/dist/web3.min.js'
 import IWeb3 from 'web3'
 import { AbiItem } from 'web3-utils';
-import ABI from '../json/SneakerFactory.json'
+import ABI from '../json/StepnDummy.json'
 
 export const getContract = async () => {
   const web3 = initializedWeb3()
-  const [address, abi]: [string, AbiItem] = ["0x67D3b8683F9F217AC617bb9448552833dea6505c", (ABI.abi as unknown as AbiItem)]
+  const [address, abi]: [string, AbiItem] = ["0x085b2f9b2175Ce0da9a77a2AaF89d3AB750CEBf4", (ABI.abi as unknown as AbiItem)]
   const contract = new web3.eth.Contract(abi, address)
   return contract
 }
