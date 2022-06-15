@@ -25,7 +25,7 @@ export const SignupModal = (props: IProps) => {
   const [disabled, setDisabled] = useState<boolean>(false)
 
   useEffect(() => {
-    setDisabled(email === '' || password === '' || nickname === '' || !selectedGender)
+    setDisabled(email === '' || password === '' || nickname === '' || !selectedAvatorId || !selectedGender)
   }, [email, password, nickname, selectedGender])
 
   const onSubmit = () => {

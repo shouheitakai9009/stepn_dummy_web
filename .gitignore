@@ -5,3 +5,4 @@ C:NODEJSnpm-cache/*
 C:NODEJSnpm-cache
 
 /node_modules
+/build
