@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal'
 import { Select, OptionType } from '../atoms/select'
+import { RadioAvators } from '../molecules/radio_avators'
 import { GenderType } from '../../enums/gender_type'
+import { IAvator } from '../../enums/avators'
 
 interface IProps {
   isOpen: boolean
@@ -16,6 +18,7 @@ const GENDER_OPTIONS: OptionType[] = Object.keys(GenderType).map(key => ({
 export const SignupModal = (props: IProps) => {
 
   const [selectedGender, setSelectedGender] = useState<OptionType | null>(null)
+  const [selectedAvatorId, setSelectedAvatorId] = useState<IAvator["id"] | null>(null)
   const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
   const [nickname, setNickname] = useState<string>('')
@@ -35,6 +38,10 @@ export const SignupModal = (props: IProps) => {
       <div className="signupModal">
         <div className="signupModal--in">
           <section className="signupModal--field">
+            <label htmlFor="avator">Select your avator</label>
+            <RadioAvators selectedAvatorId={selectedAvatorId} onSelect={setSelectedAvatorId} />
+          </section>
+          <section className="signupModal--field">
             <label htmlFor="email">Your email</label>
             <input type="email" id="email" className="input" value={email} onChange={e => setEmail(e.target.value)} />
           </section>
@@ -47,7 +54,7 @@ export const SignupModal = (props: IProps) => {
             <input type="text" id="nickname" className="input" value={nickname} onChange={e => setNickname(e.target.value)} />
           </section>
           <section className="signupModal--field">
-            <label htmlFor="nickname">Gender</label>
+            <label htmlFor="gender">Gender</label>
             <Select
               options={GENDER_OPTIONS}
               value={selectedGender}
