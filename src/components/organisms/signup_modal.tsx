@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal'
+import { app } from '../../libs/firebase'
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
 import { Select, OptionType } from '../atoms/select'
 import { RadioAvators } from '../molecules/radio_avators'
+import { notifyError, notifySuccess } from '../../utilities/toast'
 import { GenderType } from '../../enums/gender_type'
 import { IAvator } from '../../enums/avators'
 
@@ -25,11 +28,18 @@ export const SignupModal = (props: IProps) => {
   const [disabled, setDisabled] = useState<boolean>(false)
 
   useEffect(() => {
-    setDisabled(email === '' || password === '' || nickname === '' || !selectedAvatorId || !selectedGender)
-  }, [email, password, nickname, selectedGender])
+    setDisabled(email === '' || password === '' || nickname === '' || (typeof selectedAvatorId !== "number" && !selectedGender))
+  }, [email, password, nickname, selectedGender, selectedAvatorId])
 
-  const onSubmit = () => {
-
+  const onSubmit = async () => {
+    const auth = getAuth(app)
+    createUserWithEmailAndPassword(auth, email, password).then(response => {
+      if (response.operationType === "signIn") {
+        notifyError("既にアカウントが存在します。サインインしてください。")
+      }
+    }).catch((reason: any) => {
+      console.log(reason)
+    })
   }
 
   return (

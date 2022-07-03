@@ -14,13 +14,13 @@ export const Home = () => {
       <Header />
       <Catchcopy />
       <GlobalNavigation />
-      {
+      {/* {
         showSignup
           ?
           <SignupModal isOpen={true} onClickToSignin={() => setShowSignup(false)} />
           :
           <SigninModal isOpen={true} onClickToSignup={() => setShowSignup(true)} />
-      }
+      } */}
     </article>
   )
 }
